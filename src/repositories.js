@@ -1,3 +1,5 @@
+let caramelo;
+
 function memoryRepository() {
   let nextId = 1;
   const tasks = [];
