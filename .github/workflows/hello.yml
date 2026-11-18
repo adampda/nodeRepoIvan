@@ -24,4 +24,3 @@ jobs:
         run: echo 'Hola ${{ github.actor }}'
       - name: Mostrar fecha
         run: date
-      
