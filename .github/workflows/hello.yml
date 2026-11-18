@@ -2,6 +2,8 @@ name: Hola Actions
 
 on:
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions: {}
@@ -12,6 +14,14 @@ jobs:
     steps:
       - name: Saludar
         run: echo 'Hola desde GitHub Actions'
+      - name: Mostrar fecha
+        run: date
+  nombre:
+    needs: hola
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decir nombre
+        run: echo 'Hola ' + ${{ github.actor }}
       - name: Mostrar fecha
         run: date
       
