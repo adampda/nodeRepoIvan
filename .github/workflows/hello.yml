@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Decir nombre
-        run: echo 'Hola ' + ${{ github.actor }}
+        run: echo 'Hola ${{ github.actor }}'
       - name: Mostrar fecha
         run: date
       
