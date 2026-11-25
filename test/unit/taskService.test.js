@@ -15,3 +15,10 @@ test('completa tarea y da 404 para la inexistente', async () => {
   assert.equal((await service.complete(created.id)).done, true);
   await assert.rejects(() => service.complete(987), /no encontrada/);
 });
+test('lista tareas', async () => {
+  const service = createService(memoryRepository());
+  await service.create({ title: 'Tarea 1' });
+  await service.create({ title: 'Tarea 2' });
+  const list = await service.list();
+  assert.equal(list.length, 2);
+});
