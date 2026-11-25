@@ -1,5 +1,7 @@
 const express = require('express');
 const { createService } = require('./taskService');
+const algo = "Camaleon";
+algo = 32;
 function createApp(repository) {
   const app = express();
   const service = createService(repository);
